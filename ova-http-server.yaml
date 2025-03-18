@@ -17,12 +17,6 @@ spec:
           image: quay.io/yaacov/ova-http-server:latest
           ports:
             - containerPort: 8000
-          volumeMounts:
-            - name: files-volume
-              mountPath: /app/files
-      volumes:
-        - name: files-volume
-          emptyDir: {}
 
 ---
 apiVersion: v1
