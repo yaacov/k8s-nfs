@@ -13,5 +13,5 @@ oc apply -f https://raw.githubusercontent.com/yaacov/k8s-nfs/refs/heads/main/nfs
 # Helper http server
 oc apply -f https://raw.githubusercontent.com/yaacov/k8s-nfs/refs/heads/main/ova-http-server.yaml
 
-# curl http://ova-http-service/
+# curl http://ova-http-service/test_1.ova
 ```
