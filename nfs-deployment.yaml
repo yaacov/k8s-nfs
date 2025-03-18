@@ -40,7 +40,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: "30Gi"
+      storage: "10Gi"
   storageClassName: kubevirt-csi-infra-default
   volumeMode: Filesystem
 ---
