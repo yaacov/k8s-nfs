@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ova-http-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ova-http-server
+  template:
+    metadata:
+      labels:
+        app: ova-http-server
+    spec:
+      containers:
+        - name: ova-http-server
+          image: quay.io/yaacov/ova-http-server:latest
+          ports:
+            - containerPort: 8000
+          volumeMounts:
+            - name: files-volume
+              mountPath: /app/files
+      volumes:
+        - name: files-volume
+          emptyDir: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ova-http-service
+spec:
+  selector:
+    app: ova-http-server
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  type: ClusterIP
