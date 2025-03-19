@@ -41,7 +41,7 @@ spec:
   resources:
     requests:
       storage: "10Gi"
-  storageClassName: kubevirt-csi-infra-default
+  storageClassName: nfs-csi
   volumeMode: Filesystem
 ---
 ###############################################################################
